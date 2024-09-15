@@ -26,6 +26,13 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong.');
 });
 
+//Importing the cors middleware
+const cors = require('cors');
+
+// Applying the cors middleware to the entire Express application, 
+//allowing it to respond to cross-origin requests
+app.use(cors());
+
 // Calling the listen function telling the server to listen on port 3000
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
